@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-// import 'package:miggy/models/storage_item.dart';
+import 'package:miggy/models/storage_item.dart';
 import 'package:miggy/services/auth_service.dart';
-// import 'package:miggy/services/storage_service.dart';
+import 'package:miggy/services/storage_service.dart';
 import 'package:miggy/widgets/password_input.dart';
 import 'package:miggy/widgets/primary_button.dart';
 import 'package:miggy/widgets/text_input.dart';
@@ -18,7 +18,7 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   final AuthService _authService = AuthService();
-  // final StorageService _storageService = StorageService();
+  final StorageService _storageService = StorageService();
 
   final TextEditingController _email = TextEditingController();
   final TextEditingController _password = TextEditingController();
@@ -110,7 +110,12 @@ class _LoginPageState extends State<LoginPage> {
       setState(() {
         isLogginIn = true;
       });
-      await _authService.signInWithGoogle();
+      var user = await _authService.signInWithGoogle();
+
+      var accessToken =
+          StorageItem('accesstoken', user.credential?.accessToken as String);
+
+      await _storageService.saveData(accessToken);
 
       // ignore: use_build_context_synchronously
       Navigator.pushReplacementNamed(context, '/dashboard');

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:miggy/services/auth_service.dart';
-// import 'package:miggy/services/storage_service.dart';
+import 'package:miggy/services/storage_service.dart';
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({Key? key}) : super(key: key);
@@ -11,7 +11,7 @@ class SettingsPage extends StatefulWidget {
 
 class _SettingsPageState extends State<SettingsPage> {
   final AuthService _authService = AuthService();
-  // final StorageService _storageService = StorageService();
+  final StorageService _storageService = StorageService();
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,7 @@ class _SettingsPageState extends State<SettingsPage> {
           GestureDetector(
               onTap: () async {
                 await _authService.signOut();
-                // _storageService.deleteAllData();
+                _storageService.deleteAllData();
                 if (!mounted) return;
                 Navigator.of(context).pushNamedAndRemoveUntil(
                     '/login', (Route<dynamic> route) => false);
