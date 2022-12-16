@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "450801935833",
+    "project_id": "miggy-e349e",
+    "storage_bucket": "miggy-e349e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:450801935833:android:8873f38da2e5f6d85265c8",
+        "android_client_info": {
+          "package_name": "com.example.miggy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "450801935833-athmlfla7v4iglhumpi0bcmcrcdnce59.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAi6kq7IzPgJRL4cfcGF_s8O6cWeB0BN2Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "450801935833-athmlfla7v4iglhumpi0bcmcrcdnce59.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
